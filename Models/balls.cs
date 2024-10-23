@@ -13,7 +13,7 @@ namespace PongGame.Models
       X = startX;
       Y = startY;
       XDirection = 1;
-      XDirection = 1;
+      YDirection = 1;
     }
 
     public void Move()
