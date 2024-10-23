@@ -21,4 +21,15 @@ namespace PongGame.Services
     random = new Random();
   }
 
+  public void Start()
+  {
+    while (true)
+    {
+      HandleInput();
+      MoveAll();
+      Draw();
+      System.Threading.Thread.Sleep(100);
+    }
+  }
+
 }
