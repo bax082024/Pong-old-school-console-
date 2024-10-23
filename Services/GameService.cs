@@ -81,5 +81,9 @@ namespace PongGame.Services
       }
     }
 
+    private void Draw()
+    {
+      
+    }
   }
 }

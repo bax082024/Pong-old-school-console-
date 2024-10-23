@@ -16,6 +16,12 @@ namespace PongGame.Models
       XDirection = 1;
     }
 
+    public void Move()
+    {
+      X += XDirection;
+      Y += YDirection;
+    }
+
     public void BounceHorizontal() => XDirection *= -1;
     public void BounceVertical() => YDirection *= -1;
   }
