@@ -1,0 +1,15 @@
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\bin\Debug\net8.0\PongGame.exe
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\bin\Debug\net8.0\PongGame.deps.json
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\bin\Debug\net8.0\PongGame.runtimeconfig.json
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\bin\Debug\net8.0\PongGame.dll
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\bin\Debug\net8.0\PongGame.pdb
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.AssemblyInfoInputs.cache
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.AssemblyInfo.cs
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.csproj.CoreCompileInputs.cache
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.sourcelink.json
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.dll
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\refint\PongGame.dll
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.pdb
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\PongGame.genruntimeconfig.cache
+C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\obj\Debug\net8.0\ref\PongGame.dll
