@@ -107,7 +107,7 @@ namespace PongGame.Services
             Console.Write(" ");
           }
         }
-        Console.WriteLine();      }
+        Console.WriteLine();}
     }
   }
 }
