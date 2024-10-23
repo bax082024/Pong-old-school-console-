@@ -26,7 +26,7 @@ namespace PongGame.Services
       while (true)
       {
         HandleInput();
-        MoveAll();
+        MoveBall();
         Draw();
         System.Threading.Thread.Sleep(100);
       }
@@ -83,7 +83,7 @@ namespace PongGame.Services
 
     private void Draw()
     {
-      
+
     }
   }
 }
