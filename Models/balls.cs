@@ -7,6 +7,7 @@ namespace PongGame.Models
     public int XDirection { get; set; }
     public int YDirection { get; set; }
 
+    // Ball Movement
     public Ball(int startX, int startY)
     {
       X = startX;
@@ -17,8 +18,5 @@ namespace PongGame.Models
 
     public void BounceHorizontal() => XDirection *= -1;
     public void BounceVertical() => YDirection *= -1;
-
-
   }
-
 }
