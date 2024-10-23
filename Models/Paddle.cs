@@ -24,6 +24,7 @@ namespace PongGame.Models
     {
         if (Position < screenHeight - 2)
             Position++;
+            
     }
   }
 }

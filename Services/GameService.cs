@@ -83,7 +83,31 @@ namespace PongGame.Services
 
     private void Draw()
     {
+      Console.Clear();
 
+      for (int y = 0; y < ScreenHeight; y++)
+      {
+        for (int x = 0; x < ScreenWidth; x++)
+        {
+          if (y == leftPaddle.Position && x == 1)
+          {
+            Console.Write("|");
+          }
+
+          else if (y == rightPaddle.Position && x == ScreenWidth - 2)
+          {
+            Console.Write("|");
+          }
+          else if (x == ball.X && y == ball.Y)
+          {
+            Console.Write("0");
+          }
+          else
+          {
+            Console.Write(" ");
+          }
+        }
+        Console.WriteLine();      }
     }
   }
 }
