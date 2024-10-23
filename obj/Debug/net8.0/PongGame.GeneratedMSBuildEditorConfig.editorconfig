@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PongGame
-build_property.ProjectDir = C:\HjemmeKode\C-Sharp\C-Sharp\Pong (old school console)\PongGame\
+build_property.ProjectDir = C:\HjemmeKode\C-Sharp\C-Sharp\Pong-old-school-console-\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

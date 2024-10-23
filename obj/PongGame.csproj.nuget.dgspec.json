@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong (old school console)\\PongGame\\PongGame.csproj": {}
+    "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong-old-school-console-\\PongGame.csproj": {}
   },
   "projects": {
-    "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong (old school console)\\PongGame\\PongGame.csproj": {
+    "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong-old-school-console-\\PongGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong (old school console)\\PongGame\\PongGame.csproj",
+        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong-old-school-console-\\PongGame.csproj",
         "projectName": "PongGame",
-        "projectPath": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong (old school console)\\PongGame\\PongGame.csproj",
+        "projectPath": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong-old-school-console-\\PongGame.csproj",
         "packagesPath": "C:\\Users\\busch\\.nuget\\packages\\",
-        "outputPath": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong (old school console)\\PongGame\\obj\\",
+        "outputPath": "C:\\HjemmeKode\\C-Sharp\\C-Sharp\\Pong-old-school-console-\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\busch\\AppData\\Roaming\\NuGet\\NuGet.Config"
