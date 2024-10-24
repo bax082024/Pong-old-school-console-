@@ -102,8 +102,15 @@ namespace PongGame.Services
         System.Threading.Thread.Sleep(1000);
         ResetBall();
       }
+    }
+    private void ResetBall()
+    {
+      ball.X = ScreenWidth / 2;
+      ball.Y = ScreenHeight / 2;
+      delay = 200;
 
-      
+    }
+
     }
 
     private void Draw()
