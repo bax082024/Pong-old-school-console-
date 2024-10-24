@@ -28,8 +28,6 @@ namespace PongGame.Services
 
     public void Start()
     {
-      Console.SetWindowSize(ScreenWidth, ScreenHeight + 2);
-      Console.SetBufferSize(ScreenWidth, ScreenHeight + 2);
 
       while (true)
       {
@@ -111,12 +109,10 @@ namespace PongGame.Services
 
     }
 
-    }
-
     private void Draw()
     {
       
-      Console.SetCursorPosition(0, 0);
+    Console.SetCursorPosition(0, 0);
     Console.WriteLine(new string('-', ScreenWidth));
 
     // Draw bottom wall
