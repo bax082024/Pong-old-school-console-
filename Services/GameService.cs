@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using PongGame.Models;
 
@@ -97,8 +98,12 @@ namespace PongGame.Services
       {
         leftScore++;
         Console.Clear();
-        
+        Console.WriteLine("Left Player Wins!!!");
+        System.Threading.Thread.Sleep(1000);
+        ResetBall();
       }
+
+      
     }
 
     private void Draw()
