@@ -1,4 +1,6 @@
 using System;
+using System.Data;
+using System.Runtime.InteropServices;
 using PongGame.Models;
 
 namespace PongGame.Services
@@ -11,7 +13,9 @@ namespace PongGame.Services
     private Paddle rightPaddle;
     private Ball ball;
     private Random random;
-  
+    private int delay = 200;
+    private int leftScore = 0;
+    private int rightScore = 0;
 
     public GameService()
     {
@@ -23,12 +27,20 @@ namespace PongGame.Services
 
     public void Start()
     {
+      Console.SetWindowSize(ScreenWidth, ScreenHeight + 2);
+      Console.SetBufferSize(ScreenWidth, ScreenHeight + 2);
+
       while (true)
       {
         HandleInput();
         MoveBall();
         Draw();
-        System.Threading.Thread.Sleep(100);
+        System.Threading.Thread.Sleep(delay);
+
+        if (delay > 50)
+        {
+          delay -= 1;
+        }
       }
     }
 
@@ -73,41 +85,52 @@ namespace PongGame.Services
         ball.BounceHorizontal();
       }
 
-      if (ball.X <= 0 || ball.X >= ScreenWidth - 1)
+      if (ball.X <= 0)
       {
+        rightScore ++;
         Console.Clear();
-        Console.WriteLine(ball.X <= 0 ? "Right Player Wins!!!" : "Left Player Wins!!!");
-        Environment.Exit(0);
+        Console.WriteLine("Right Player Wins!!!");
+        System.Threading.Thread.Sleep(1000);
+        ResetBall();
+      }
+      else if (ball.X >= ScreenWidth - 1)
+      {
+        leftScore++;
+        Console.Clear();
+        
       }
     }
 
     private void Draw()
     {
-      Console.Clear();
+      
+      Console.SetCursorPosition(0, 0);
+    Console.WriteLine(new string('-', ScreenWidth));
 
-      for (int y = 0; y < ScreenHeight; y++)
-      {
-        for (int x = 0; x < ScreenWidth; x++)
-        {
-          if (y == leftPaddle.Position && x == 1)
-          {
-            Console.Write("|");
-          }
+    // Draw bottom wall
+    Console.SetCursorPosition(0, ScreenHeight);
+    Console.WriteLine(new string('-', ScreenWidth));
 
-          else if (y == rightPaddle.Position && x == ScreenWidth - 2)
-          {
-            Console.Write("|");
-          }
-          else if (x == ball.X && y == ball.Y)
-          {
-            Console.Write("0");
-          }
-          else
-          {
-            Console.Write(" ");
-          }
-        }
-        Console.WriteLine();}
+    // Draw left paddle
+    Console.SetCursorPosition(1, leftPaddle.Position);
+    Console.Write("|");
+
+    // Draw right paddle
+    Console.SetCursorPosition(ScreenWidth - 2, rightPaddle.Position);
+    Console.Write("|");
+
+    // Draw ball
+    Console.SetCursorPosition(ball.X, ball.Y);
+    Console.Write("O");
+
+    // Draw score if needed or other UI elements
+    Console.SetCursorPosition(0, ScreenHeight + 1); // Position score below the game field
+    Console.WriteLine($"Score: {leftScore} - {rightScore}");
+
+      
+      
+
+
     }
   }
 }
