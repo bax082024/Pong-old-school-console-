@@ -1,7 +1,4 @@
 using System;
-using System.Data;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using PongGame.Models;
 
 namespace PongGame.Services
@@ -28,6 +25,18 @@ namespace PongGame.Services
 
     public void Start()
     {
+      // console window and buffer size .
+      if (Console.LargestWindowWidth >= ScreenWidth && Console.LargestWindowHeight >= ScreenHeight + 2)
+      {
+        // only for windows. Disable for mac etc...
+        Console.SetWindowSize(ScreenWidth, ScreenHeight + 2);
+        Console.SetBufferSize(ScreenWidth, ScreenHeight + 2);
+      }
+      else
+      {
+        Console.WriteLine("Screen too small for the game!");
+        return;
+      }
 
       while (true)
       {
@@ -38,7 +47,7 @@ namespace PongGame.Services
 
         if (delay > 50)
         {
-          delay -= 1;
+          delay -= 1; // Speed up the game over time
         }
       }
     }
@@ -65,14 +74,18 @@ namespace PongGame.Services
           case ConsoleKey.DownArrow:
             rightPaddle.MoveDown();
             break;
-
         }
       }
     }
 
     private void MoveBall()
     {
+      int prevX = ball.X;
+      int prevY = ball.Y;
+
       ball.Move();
+
+      ClearBallPosition(prevX, prevY);
 
       if (ball.Y <= 0 || ball.Y >= ScreenHeight - 1)
       {
@@ -84,60 +97,47 @@ namespace PongGame.Services
         ball.BounceHorizontal();
       }
 
-      if (ball.X <= 0)
+      if (ball.X <= 0 || ball.X >= ScreenWidth - 1)
       {
-        rightScore ++;
         Console.Clear();
-        Console.WriteLine("Right Player Wins!!!");
-        System.Threading.Thread.Sleep(1000);
-        ResetBall();
-      }
-      else if (ball.X >= ScreenWidth - 1)
-      {
-        leftScore++;
-        Console.Clear();
-        Console.WriteLine("Left Player Wins!!!");
-        System.Threading.Thread.Sleep(1000);
-        ResetBall();
+        Console.WriteLine(ball.X <= 0 ? "Right Player Wins!!!" : "Left Player Wins!!!");
+        Environment.Exit(0);
       }
     }
+
+    private void ClearBallPosition(int prevX, int prevY)
+    {
+      if (prevX >= 0 && prevX < ScreenWidth && prevY >= 0 && prevY < ScreenHeight)
+      {
+        Console.SetCursorPosition(prevX, prevY);
+        Console.Write(" ");
+      }
+    }
+
     private void ResetBall()
     {
-      ball.X = ScreenWidth / 2;
-      ball.Y = ScreenHeight / 2;
+      ball = new Ball(ScreenWidth / 2, ScreenHeight / 2);
       delay = 200;
-
     }
 
     private void Draw()
     {
-      
-    Console.SetCursorPosition(0, 0);
-    Console.WriteLine(new string('-', ScreenWidth));
+      // Clear console before next frame
+      Console.Clear();
 
-    // Draw bottom wall
-    Console.SetCursorPosition(0, ScreenHeight);
-    Console.WriteLine(new string('-', ScreenWidth));
+      // Draw paddles
+      Console.SetCursorPosition(1, leftPaddle.Position);
+      Console.Write("|");
 
-    // Draw left paddle
-    Console.SetCursorPosition(1, leftPaddle.Position);
-    Console.Write("|");
+      Console.SetCursorPosition(ScreenWidth - 2, rightPaddle.Position);
+      Console.Write("|");
 
-    // Draw right paddle
-    Console.SetCursorPosition(ScreenWidth - 2, rightPaddle.Position);
-    Console.Write("|");
-
-    // Draw ball
-    Console.SetCursorPosition(ball.X, ball.Y);
-    Console.Write("O");
-
-    // Draw score if needed or other UI elements
-    Console.SetCursorPosition(0, ScreenHeight + 1); // Position score below the game field
-    Console.WriteLine($"Score: {leftScore} - {rightScore}");
-
-      
-      
-
+      // Draw ball
+      if (ball.X >= 0 && ball.X < ScreenWidth && ball.Y >= 0 && ball.Y < ScreenHeight)
+      {
+        Console.SetCursorPosition(ball.X, ball.Y);
+        Console.Write("0");
+      }
 
     }
   }
